@@ -1,0 +1,29 @@
+# Source files
+*.ts
+!*.d.ts
+
+# Development files
+.gitignore
+.vscode/
+.idea/
+example.js
+tsconfig.json
+bun.lock
+
+# Documentation (keep README.md)
+CONTRIBUTING.md
+
+# Tests
+*.test.*
+*.spec.*
+__tests__/
+tests/
+
+# Environment
+.env*
+
+# Logs
+*.log
+
+# Coverage
+coverage/

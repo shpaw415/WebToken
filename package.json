@@ -1,0 +1,70 @@
+{
+  "name": "webtoken",
+  "version": "1.0.0",
+  "description": "A secure, lightweight session management library with AES-256-CBC encryption, HMAC integrity verification, and comprehensive security features.",
+  "keywords": [
+    "session",
+    "cookie",
+    "encryption",
+    "security",
+    "jwt",
+    "auth",
+    "authentication",
+    "webtoken",
+    "aes",
+    "hmac",
+    "typescript"
+  ],
+  "author": "Justin Halle <shpaw415@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shpaw415/webtoken.git"
+  },
+  "homepage": "https://github.com/shpaw415/webtoken#readme",
+  "bugs": {
+    "url": "https://github.com/shpaw415/webtoken/issues"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun run build:clean && bun run build:cjs && bun run build:esm && bun run build:types",
+    "build:clean": "rm -rf dist",
+    "build:cjs": "bun build index.ts --outdir dist --format cjs --external crypto --target node && mv dist/index.js dist/index.cjs",
+    "build:esm": "bun build index.ts --format esm --external crypto --target node --outfile dist/index.mjs",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "dev": "bun run index.ts",
+    "test": "bun test",
+    "test:library": "WEB_TOKEN_SECRET=\"this-is-a-very-secure-secret-key-with-at-least-32-characters\" node test-library.mjs",
+    "lint": "bun run lint:check",
+    "lint:check": "echo 'Add your linter here'",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "bun": ">=1.0.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {}
+}
