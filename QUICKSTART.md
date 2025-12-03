@@ -3,35 +3,37 @@
 ## 🚀 Quick Start
 
 1. **Install the package:**
+
    ```bash
    npm install webtoken
    ```
 
 2. **Set environment variables:**
+
    ```bash
    export WEB_TOKEN_SECRET="your-super-secure-32-char-secret"
-   export WEB_TOKEN_IV="your-16-char-iv"  # Optional
    ```
 
 3. **Use in your application:**
+
    ```typescript
-   import { webToken } from 'webtoken';
+   import { webToken } from "webtoken";
 
    const token = new webToken(request, {
-     cookieName: 'session',
+     cookieName: "session",
      maxAge: 3600,
      secure: true,
-     httpOnly: true
+     httpOnly: true,
    });
 
    // Set session data
-   token.setData({ userId: 123, email: 'user@example.com' });
+   token.setData({ userId: 123, email: "user@example.com" });
    token.setCookie(response);
 
    // Get session data
    if (token.isValid()) {
      const session = token.session();
-     console.log('User:', session?.userId);
+     console.log("User:", session?.userId);
    }
    ```
 
