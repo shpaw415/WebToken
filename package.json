@@ -1,6 +1,5 @@
 {
-  "name": "@shapaw415/webtoken",
-  "access": "public",
+  "name": "@shpaw415/webtoken",
   "version": "2.0.0",
   "description": "A secure, lightweight session management library with AES-256-CBC encryption, HMAC integrity verification, and comprehensive security features.",
   "keywords": [
@@ -67,5 +66,9 @@
   "peerDependencies": {
     "typescript": "^5.9.2"
   },
-  "dependencies": {}
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "private": false
 }
